@@ -20,11 +20,16 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 			expirationInterval="${cache.token.expirationInterval}" entryTtlUnit="MINUTES" />
 	</ee:object-store-caching-strategy>
 	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="531fbb42-a194-4a28-80ef-2489631cf60c" enableCookies="false" responseTimeout="${anypoint.platform.responseTimeout}">
-		<http:request-connection host="${anypoint.platform.host}" port="443" protocol="HTTPS" />
+		<http:request-connection host="${anypoint.platform.host}" port="443" protocol="HTTPS" tlsContext="TLS_Context"/>
 	</http:request-config>
 	<http:request-config name="HTTP_OSv2_Request_configuration" doc:name="HTTP OSv2 Request configuration" doc:id="77c30034-478d-4718-aaa8-033a227e00e2" enableCookies="false" responseTimeout="${anypoint.platform.responseTimeout}">
 		<http:request-connection host="${anypoint.platform.apis.osv2.host}" port="443" protocol="HTTPS" />
 	</http:request-config>
-	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="24678c25-10fb-4f47-941f-d16a779997c5" file="properties/secure/app-${mule.env}.yaml" key="${mule.key}"/>
-	<global-property doc:name="Global Property" doc:id="27925b96-0977-4ea5-b09e-e417f88b98d0" name="mule.key" value="thisshouldbeakey" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="24678c25-10fb-4f47-941f-d16a779997c5" file="properties/secure/app-${mule.env}.yaml" key="${mule.key}">
+		<secure-properties:encrypt algorithm="Blowfish" />
+	</secure-properties:config>
+	<global-property doc:name="Global Property" doc:id="27925b96-0977-4ea5-b09e-e417f88b98d0" name="mule.key" value="MuleSoftC4E@Humana" />
+	<tls:context name="TLS_Context" doc:name="TLS Context" doc:id="9a0d729b-972e-474e-ac0a-d605085389a0" >
+		<tls:trust-store path="truststore.jks" password="changeit" type="jks" insecure="true" />
+	</tls:context>
 </mule>
