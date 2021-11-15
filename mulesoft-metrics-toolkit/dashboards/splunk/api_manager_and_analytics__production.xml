@@ -281,6 +281,20 @@
        </table>
      </panel>
      <panel>
+       <title>API Manager - Production - Automated Policies Used - Current</title>
+       <table>
+         <title>API Manager - Production - Automated Policies Used - Current</title>
+         <search>
+           <query>index=$platformMetricsIndex$   | eventstats max(_time) as maxTimestamp | where _time=maxTimestamp | search businessGroup IN ($bgToken$)  | rename apiManagerMetrics.apis.production.automatedPoliciesUsed{} as "Automated Policies" | table "Automated Policies"</query>
+           <earliest>$timeToken.earliest$</earliest>
+           <latest>$timeToken.latest$</latest>
+         </search>
+         <option name="drilldown">none</option>
+       </table>
+     </panel>
+    </row>
+    <row>
+     <panel>
        <title>API Manager - Production - API instances by secure Policies - Current</title>
        <chart>
          <title>API Manager - Production - API instances by secure Policies - Current</title>

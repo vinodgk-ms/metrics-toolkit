@@ -5,7 +5,7 @@ anypoint:
     #Change to gov.anypoint.mulesoft.com  if using Gov Cloud
     #Change to your_domain.com if using PCE
     host: "anypoint.mulesoft.com" 
-    responseTimeout: "30000"
+    responseTimeout: "60000"
     apis:
       coreservices:
         maxConcurrency: "100"
@@ -86,7 +86,7 @@ anypoint:
         query:
           path: "/analytics/1.0/{orgId}/environments/{envId}/query"
           duration: "30d"
-          timeout: "30000"
+          timeout: "60000"
       exchange:
         maxConcurrency: "1"
         retries:

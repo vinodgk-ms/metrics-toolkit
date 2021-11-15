@@ -3,18 +3,18 @@ auth:
   orgId: "![0A81z+2YGOcDM6ICGNvC6jZ7mBGLgYI2MsyZde+LDI4zbBHdKbwjWQ==]"
 
 # If auth mode = platform-credentials (ignored, otherwise):
-  username: "![Ux73ai3661/7mryX7RAqHhtWsf8QDUUy]"
-  password: "![Ux73ai3661/7mryX7RAqHhtWsf8QDUUy]"
+  username: "![pNZ8JRopqCHZUMoxFZRGhg==]"
+  password: "![pNZ8JRopqCEBu030ZU5XixkRTuG1dmsM]"
 
 # If auth mode = connected-app-credentials (ignored, otherwise):
-  clientId: "![KBpLsS23w80lisbRih/oTDfxzILj1QzPpUXK+KQke2KkLhX96+1qdw==]"
-  clientSecret: "![AofoAjdgytaWJH6CdKPXwDbH+1vDKS0fJI+5YyPgro7rL7pmjQ5SvA==]"
+  clientId: "![TVIXAo42VnTjXEsSJ3KErMfjDy7d3vnyfrkqCWZmOFtDf8y4MFxJxg==]"
+  clientSecret: "![78rXrQuzj/4R09fxCoKcKB56xVrpOrHF5GkoGiqfCoKJO0hZdxSp5A==]"
      
 ignoreLists:
   organizations: "![6EDBk1PDW9k/raKiZ2+WxE35V1Z1qCsyZgVTflihZ6asnKU4xAoVTw==]" #Array: comma-separated values 'orgId1,orgId2'
 
 splunk:
-  token: "![YAV1qf5mXhlrgjoEuoNC434N6I+lM6LOg0+SkmwF84C7Pln/TIV8OQ==]"
+  token: "![bQWPeDx622FWL1UPglQlaNEOTktKPXIIU0eZVD8iWpqo19/LefLCXA==]"
 
 elk:
   user: "![Ux73ai3661/7mryX7RAqHhtWsf8QDUUy]"
