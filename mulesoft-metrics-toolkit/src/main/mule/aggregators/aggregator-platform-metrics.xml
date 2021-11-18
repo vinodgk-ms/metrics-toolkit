@@ -279,7 +279,14 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<flow-ref doc:name="ARM Cluster Metrics Flow Reference" doc:id="88099d00-3386-488e-8b71-32ee74a1f551" name="collector-arm-clusters-metrics-parallel-flow" />
 			</route>
 			<route>
-				<flow-ref doc:name="ARM ServerGroups Metrics Flow Reference" doc:id="a7ee04ab-983c-40c0-8fd6-dee8ca996d0a" name="collector-arm-server-groups-metrics-parallel-flow" />
+				<choice doc:name="Choice" doc:id="d1272514-510a-44c0-aa81-f222e2b6d0af" >
+					<when expression='Mule::p("anypoint.platform.apis.arm.serverGroups.enabled") == "true"'>
+						<flow-ref doc:name="ARM ServerGroups Metrics Flow Reference" doc:id="a7ee04ab-983c-40c0-8fd6-dee8ca996d0a" name="collector-arm-server-groups-metrics-parallel-flow" />
+					</when>
+					<otherwise >
+						<logger level="INFO" doc:name="Logger" doc:id="64838368-2806-4ce4-af8e-567f036c8ffc" message="ARM: Server Groups not enabled" />
+					</otherwise>
+				</choice>
 			</route>
 			<route>
 				<choice doc:name="Choice" doc:id="c16a46ae-227b-4f73-ba18-91d7f660396e" >

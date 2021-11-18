@@ -19,11 +19,11 @@ embedded.dashboard:
 poller:
   enabled: "true"
   frequency: 
-    cron: "0 10 4 * * ? *" 
+    cron: "0 25 14 * * ? *" 
     #Sample for dev "0 17 * * * ? *" At second :00 of minute :17 of every hour
     #Sample for prod "0 0 0 * * ? *" At 00:00:00am every day
     #https://www.freeformatter.com/cron-expression-generator-quartz.html
-    timezone: "GMT-3"
+    timezone: "GMT-5"
 auth:
   mode: "platform-credentials" # valid options are: platform-credentials or connected-app-credentials
   
@@ -60,7 +60,7 @@ loader:
 
 # Default value: "all"
   
-collectors: "arm,rtf"
+collectors: "core,arm,rtf,ex,dc,apm,ap,apc,apma"
   
 splunk:
   host: "localhost"

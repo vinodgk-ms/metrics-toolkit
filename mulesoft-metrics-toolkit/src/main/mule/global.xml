@@ -20,7 +20,7 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 			expirationInterval="${cache.token.expirationInterval}" entryTtlUnit="MINUTES" />
 	</ee:object-store-caching-strategy>
 	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="531fbb42-a194-4a28-80ef-2489631cf60c" enableCookies="false" responseTimeout="${anypoint.platform.responseTimeout}">
-		<http:request-connection host="${anypoint.platform.host}" port="443" protocol="HTTPS" tlsContext="TLS_Context" connectionIdleTimeout="60000"/>
+		<http:request-connection host="${anypoint.platform.host}" port="443" protocol="HTTPS" tlsContext="TLS_Context" connectionIdleTimeout="120000"/>
 	</http:request-config>
 	<http:request-config name="HTTP_OSv2_Request_configuration" doc:name="HTTP OSv2 Request configuration" doc:id="77c30034-478d-4718-aaa8-033a227e00e2" enableCookies="false" responseTimeout="${anypoint.platform.responseTimeout}">
 		<http:request-connection host="${anypoint.platform.apis.osv2.host}" port="443" protocol="HTTPS" />

@@ -5,7 +5,7 @@ anypoint:
     #Change to gov.anypoint.mulesoft.com  if using Gov Cloud
     #Change to your_domain.com if using PCE
     host: "anypoint.mulesoft.com" 
-    responseTimeout: "60000"
+    responseTimeout: "80000"
     apis:
       coreservices:
         maxConcurrency: "100"
@@ -35,12 +35,14 @@ anypoint:
         maxConcurrency: "3"
         apps:
           path: "/hybrid/api/v1/applications"
+          enabled: "true"
         servers:
           path: "/hybrid/api/v1/servers"
         clusters:
           path: "/hybrid/api/v1/clusters"
         serverGroups:
           path: "/hybrid/api/v1/serverGroups"
+          enabled: "false"
         deployments:
           path: "/hybrid/api/v2/organizations/{orgId}/environments/{envId}/deployments"
         deployment:
@@ -86,7 +88,7 @@ anypoint:
         query:
           path: "/analytics/1.0/{orgId}/environments/{envId}/query"
           duration: "30d"
-          timeout: "60000"
+          timeout: "80000"
       exchange:
         maxConcurrency: "1"
         retries:
